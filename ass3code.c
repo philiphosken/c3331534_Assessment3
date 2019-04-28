@@ -196,27 +196,50 @@ out = fopen("out.txt", "w+");
 
 else if (selectionnumber == 5){
     
- psudo
- 
- scan input 
- same as other code 
- key =1
- yes or no
- 
- key = 2 
- 
- etc 
- when key = 26
- 
- printf("This message is not enccypted with a rotation cypher");
- 
- 
- 
- 
- 
- 
- FILE *words.txt
+ int k = 0; //KEY = the number of charcters shifted in the rotation cypher to generate coded message 
+ int yor = 0;
+
+    FILE *in;
+    FILE *out;
     
+    in = fopen("in.txt", "a+"); /// Tha a+ allows for reading and writing to the end of a file (so i dont get two of the last character scan ABC print ABCC)
+    out = fopen("out.txt", "w+");
+    
+    while (feof(in) == 0){
+        char phi;
+        fscanf(in, "%c", &phi);
+        
+        if (feof(in)!=0){
+            fprintf(in, "%s", " "); ///One the last character is reached add a space so the last character isnt doubled
+        }
+      
+        if (phi == 32){
+        fprintf(out, "%c", phi); //Just prints the space
+        printf("%c", phi);
+    
+        } else if((phi + k) > 90){ // If it exceeds 'Z' after k is added, then simply take 26 away then add k
+        fprintf(out, "%c", phi - 26 + k); 
+        printf("%c", phi - 26 + k);
+        
+        } else if ( (phi + k) < 65 ){ //If it exceeds 'Z' after k is added, then simply add 26 away then add k
+        fprintf(out, "%c", phi + 26 + k);
+        printf("%c", phi + 26 + k);
+            
+        } else {fprintf(out, "%c", phi + k);// if within the bounds of ASCII 'A' and 'Z' just add k
+            printf("%c", phi + k);
+        }
+
+        printf("is this a correct decryption? y/n :\n\n");
+        scanf("%d", yor);
+        if(yor == y){
+            break;
+        }else if 
+        k++;
+        
+    } 
+    if (k == 26){
+        printf("This message is not enccypted with a rotation cypher");
+    } else 
 }
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
