@@ -22,7 +22,9 @@ scanf("%d", &k);
     FILE *in;
     FILE *out;
     
-    in = fopen("in.txt", "a+");
+    in = fopen("in.txt", "a+"); /*  Opens a file called 'in.txt' for reading and appending (writing at end of file).  The file is created if it does not exist.  The initial
+              file position for reading is at the beginning of the file, but output is always appended to the end of the file. */
+
     out = fopen("out.txt", "w+");
     
     while (feof(in) == 0){
@@ -122,8 +124,8 @@ scanf("%s", subtxt);
 FILE *in;
 FILE *out;
 
-in = fopen("in.txt", "r");
-out = fopen("out.txt", "w");
+in = fopen("in.txt", "a+");
+out = fopen("out.txt", "w+");
     
     while (feof(in) == 0){
         fscanf(in, "%c", &m);
@@ -167,8 +169,8 @@ scanf("%s", subtxt);
 FILE *in;
 FILE *out;
 
-in = fopen("in.txt", "r");
-out = fopen("out.txt", "w");
+in = fopen("in.txt", "a+");
+out = fopen("out.txt", "w+");
     
     while (feof(in) == 0){
         fscanf(in, "%c", &m);
@@ -186,7 +188,7 @@ out = fopen("out.txt", "w");
 }    
 }
 
-//*****************************************************************************************************************************
+//*********************************************************************************************************************************
 //*****************************************************************************************************************************
 //      5..........Rotation Decryption NO KEY
 //*****************************************************************************************************************************
@@ -194,7 +196,26 @@ out = fopen("out.txt", "w");
 
 else if (selectionnumber == 5){
     
-    
+ psudo
+ 
+ scan input 
+ same as other code 
+ key =1
+ yes or no
+ 
+ key = 2 
+ 
+ etc 
+ when key = 26
+ 
+ printf("This message is not enccypted with a rotation cypher");
+ 
+ 
+ 
+ 
+ 
+ 
+ FILE *words.txt
     
 }
 //*****************************************************************************************************************************
