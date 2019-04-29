@@ -17,32 +17,32 @@ int k = 0; //KEY = the number of charcters shifted in the rotation cypher to gen
 printf("(Key is the number of characters youd like the encryption to shift)\n\nKey: ");
 scanf("%d", &k);
 
-FILE *in;
-FILE *out;
+FILE *in; //protocall for opening a pointer to a file
+FILE *out; //protocall for opening a pointer to a file
     
-in = fopen("in.txt", "a+"); /*  Opens a file called 'in.txt' for reading and appending (writing at end of file).  The file is created if it does not exist.  The initial
+in = fopen("in.txt", "a+"); /*Opens a file called 'in.txt' for reading and appending (writing at end of file).  The file is created if it does not exist.  The initial
               file position for reading is at the beginning of the file, but output is always appended to the end of the file. */
-out = fopen("out.txt", "w+");
+out = fopen("out.txt", "w+"); /*Opens a file called 'out.txt' for writing and reading*/
     
-    while (feof(in) == 0){
+    while (feof(in) == 0){ //while there is still infomation in the file continue reading 
     char phi;
-    fscanf(in, "%c", &phi);
+    fscanf(in, "%c", &phi); //scan each character into the varaiable 'phi'
 
-        if (phi == 32){
-        fprintf(out, "%c", phi); //Just prints the space
-        printf("%c", phi);
+        if (phi == 32){ //if phi == 32 this means it is a space which we want the complier to print unchanged
+        fprintf(out, "%c", phi); //Just prints the space to out.txt
+        printf("%c", phi); //prints space to std out
      
-        } else if((phi + k) > 90){ // If it exceeds 'Z' after k is added, then simply take 26 away then add k
-        fprintf(out, "%c", phi - 26 + k); 
-        printf("%c", phi - 26 + k);
+        } else if((phi + k) > 90){ // If it exceeds 'Z' after k is added, then simply take 26 away then add k to create looping effect 
+        fprintf(out, "%c", phi - 26 + k); //prints this charater to out.txt
+        printf("%c", phi - 26 + k); //prints this character to std out 
         
         } else if ( (phi + k) < 65 ){ //If it exceeds 'Z' after k is added, then simply add 26 away then add k
-        fprintf(out, "%c", phi + 26 + k);
-        printf("%c", phi + 26 + k);
+        fprintf(out, "%c", phi + 26 + k); //prints this character to out.txt
+        printf("%c", phi + 26 + k); //prints this character to std out
         
-        } else {
-        fprintf(out, "%c", phi + k);// if within the bounds of ASCII 'A' and 'Z' just add k
-        printf("%c", phi + k);
+        } else { // if within the bounds of ASCII 'A' and 'Z' just add k
+        fprintf(out, "%c", phi + k); //prints to file out.txt
+        printf("%c", phi + k); // prints to std out
         }
     }
 }
@@ -54,16 +54,16 @@ out = fopen("out.txt", "w+");
 else if (selectionnumber == 2){
     
 int k = 0; //KEY = the number of charcters shifted in the rotation cypher to generate coded message 
-printf("(Key is the number of characters that have been shifted from original)\n\nKey: ");
-scanf("%d", &k);
+printf("(Key is the number of characters that have been shifted from original)\n\nKey: "); //prompt to enter a value that will be the Key
+scanf("%d", &k); // stores the key into varible 'k' that can then be used to alter ascii numbers and hence alter letters 
 
-FILE *in;
-FILE *out;
+FILE *in; //protocall for opening a pointer to a file
+FILE *out; //protocall for opening a pointer to a file
 
-in = fopen("in.txt", "a+"); /// Tha a+ allows for reading and writing to the end of a file (so i dont get two of the last character scan ABC print ABCC)
-out = fopen("out.txt", "w+");
+in = fopen("in.txt", "a+"); // The a+ allows for reading and writing to the end of a file 
+out = fopen("out.txt", "w+"); /*Opens a file called 'out.txt' for writing and reading*/
     
-    while (feof(in) == 0){
+    while (feof(in) == 0){ //while there is still infomation in the file continue reading 
     char phi;
     fscanf(in, "%c", &phi);
       
