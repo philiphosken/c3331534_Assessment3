@@ -9,6 +9,10 @@ scanf("%d", &selectionnumber);
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 //      1..........Rotation encrytion with key
+//
+//    This process will read a plain english message held within a file named in.txt. After this a rotation key can be entered which will 
+//    then rotate the letters that many times resulting a encrypted output. My code will only process capital letters and spaces
+//
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 if(selectionnumber == 1){
@@ -49,6 +53,11 @@ out = fopen("out.txt", "w+"); /*Opens a file called 'out.txt' for writing and re
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 //      2..........Rotation Decryption with key
+//
+//    The principle of this task is similar to that of task 1. This process will read a plain english message held within a file 
+//    named in.txt. After this a rotation key can be entered which will then rotate the letters that many times resulting a encrypted 
+//    output. My code will only process capital letters and spaces.
+//
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 else if (selectionnumber == 2){
@@ -88,6 +97,12 @@ out = fopen("out.txt", "w+"); /*Opens a file called 'out.txt' for writing and re
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 //      3..........Substitution Encryption with key
+//
+//      The substitution will prompt the user to input an alphabet that is made up followed by a space. The text in input.txt 
+//      will then be read and compared with the english alphatbet that is so many places into an array. When the two equal, 
+//      the value of the substitud alphabet so many places into the array will be printed to std output and the out.txt
+//      as an encrypted message.
+//
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 else if (selectionnumber == 3){
@@ -127,6 +142,12 @@ out = fopen("out.txt", "w+");
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 //      4..........Substitution Decryption with key
+//
+//      This task is similar to that of task 3. The substitution will prompt the user to input an alphabet that is the key 
+//      required to decode the cipher up followed by a space. The text in input.txt will then be read and compared with 
+//      the cipher alphatbet that is so many places into an array. When the two equal, the value of the real alphabet 
+//      so many places into the array will be printed to std output and the out.txt as a message.
+//
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 else if (selectionnumber == 4){
@@ -166,6 +187,11 @@ out = fopen("out.txt", "w+");
 //*********************************************************************************************************************************
 //*****************************************************************************************************************************
 //      5..........Rotation Decryption NO KEY
+//
+//      This task has been hard coded to print the 25 variations involved in the rotation of the alphabet.
+//      It is then up to the used to observe which message reads as plain english. This is similar to task 2,
+//      just with extra prompts and all 25 rotations
+//        
 //*****************************************************************************************************************************
 //*****************************************************************************************************************************
 else if (selectionnumber == 5){
@@ -206,7 +232,7 @@ out = fopen("out.txt", "w+");
     fclose(out);
     
 
-    for (k = 1 ; k < 26 ; k++){
+    for (k = 1 ; k < 26; k++){
     
     printf("\n\nis this the correct decryption? (KEY = %d) y/n\n\n", k);
     scanf("%d", &option);
